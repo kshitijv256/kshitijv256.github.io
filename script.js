@@ -27,10 +27,19 @@ function verify(elem,message,cnd){
     }
 }
 
+function checkDOB(){
+    let age = new Date().getFullYear() - new Date(dob.value).getFullYear();
+    if(age < 18 || age>55){
+        return false;
+    }else{
+        return true;
+    }
+}
 let message_name = "Username must be at least 3 characters long";
 let message_email = "Email must be valid";
 let message_pass = "Passwords must match";
 let message_agree = "You must agree to the terms and conditions";
+let message_dob = "You age must be between 18 and 55 to continue";
 
 username.addEventListener("input", (e) => {
     let cond_name = username.value.length < 3;
@@ -48,6 +57,12 @@ cpassword.addEventListener("input", (e) => {
     let cond_pass = password.value != cpassword.value;
     e.preventDefault();
     verify(cpassword,message_pass,cond_pass);
+});
+
+dob.addEventListener("input", (e) => {
+    let cond_dob = !checkDOB();
+    e.preventDefault();
+    verify(dob,message_dob,cond_dob);
 });
 
 function makeObject(){
