@@ -110,6 +110,8 @@ function displayTable(){
 form.addEventListener("submit", (e) => {
     let cond_agree = !tc.checked;
     e.preventDefault();
+    let cond_dob = !checkDOB();
+    verify(dob,message_dob,cond_dob);
     verify(tc,message_agree,cond_agree);
     if (!cond_agree) {
         let obj = makeObject();
