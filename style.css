@@ -1,0 +1,103 @@
+body{
+    background-color: #fffafa;
+    color: #2e2e2e;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    margin: 0;
+    align-items: center;
+}
+
+/* input{
+} */
+
+#main{
+    margin: 100px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 500px;
+    width: auto;
+}
+
+#main h1{
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 32px;
+}
+
+#form-box{
+    background-color: rgb(209, 240, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    border-radius: 20px;
+    height: 500px;
+    width: 500px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+.inputs input{
+    width: 240px;
+    height: 30px;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#agree{
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 16px;
+}
+#agree input{
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#submit{
+    margin-left: 340px;
+    margin-top: 20px;
+    font-size: 20px;
+    height: 50px;
+    width: 120px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#table-box{
+    margin : 0 20px;
+    background-color: rgb(200, 255, 127);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    border-radius:20px;
+    height: 500px;
+    width: 600px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+td,th{
+    padding-left: 10px;
+    width: 100px;
+    text-align: left;
+}
