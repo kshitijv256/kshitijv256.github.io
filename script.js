@@ -119,6 +119,12 @@ function displayTable(){
 form.addEventListener("submit", (e) => {
     let cond_agree= !tc.checked;
     e.preventDefault();
+<<<<<<< HEAD
+=======
+    let cond_dob = !checkDOB();
+    verify(dob,message_dob,cond_dob);
+    verify(tc,message_agree,cond_agree);
+>>>>>>> 6c537baafce6f946c7b221a7beb1618c0e3a182c
     if (!cond_agree) {
         let obj = makeObject();
         user_entries.push(obj);
