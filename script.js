@@ -18,7 +18,6 @@ user_entries = fillTable();
 let username = element("name"),
   email = element("email"),
   password = element("password"),
-  cpassword = element("cpassword"),
   tc = element("tc"),
   dob = element("dob");
 
@@ -48,7 +47,6 @@ function checkDOB(){
 }
 let message_name = "Username must be at least 3 characters long";
 let message_email = "Email must be valid";
-let message_pass = "Passwords must match";
 let message_agree = "You must agree to the terms and conditions";
 let message_dob = "You age must be between 18 and 55 to continue";
 
@@ -62,12 +60,6 @@ email.addEventListener("input", (e) => {
     let cond_email = !(email.value.includes("@") && email.value.includes("."));
     e.preventDefault();
     verify(email,message_email,cond_email);
-});
-
-cpassword.addEventListener("input", (e) => {
-    let cond_pass = password.value != cpassword.value;
-    e.preventDefault();
-    verify(cpassword,message_pass,cond_pass);
 });
 
 dob.addEventListener("input", (e) => {
@@ -106,7 +98,7 @@ function displayTable(){
                     <th>Password</th>
                     <th>Dob</th>
                     <th>Accepted terms?</th>
-                </tr>`;
+                </tr>\n`;
     for(let i=0;i<entries.length;i++){
         str += `<tr>
                     <td>${entries[i].name}</td>
@@ -114,7 +106,7 @@ function displayTable(){
                     <td>${entries[i].password}</td>
                     <td>${entries[i].dob}</td>
                     <td>${entries[i].checked}</td>
-                </tr>`;
+                </tr>\n`;
     }
     table.innerHTML = str;
 }
@@ -129,5 +121,7 @@ form.addEventListener("submit", (e) => {
     }
     displayTable();
 });
-
+window.onload = (event) => {
+    displayTable();
+};
 
