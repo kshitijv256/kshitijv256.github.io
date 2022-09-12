@@ -4,6 +4,17 @@ let classes = (classes) => document.getElementsByClassName(classes);
 
 let user_entries = [];
 
+function fillTable(){
+    let obj = localStorage.getItem("user_entries");
+    if(obj){
+        user_entries = JSON.parse(obj);
+    }else{
+        user_entries = [];
+    }
+    return user_entries;
+}
+user_entries = fillTable();
+
 let username = element("name"),
   email = element("email"),
   password = element("password"),
@@ -85,23 +96,15 @@ function makeObject(){
     return obj;
 }
 
-function fillTable(){
-    let obj = localStorage.getItem("user_entries");
-    if(obj){
-        user_entries = JSON.parse(obj);
-    }else{
-        user_entries = [];
-    }
-    return user_entries;
-}
+
 function displayTable(){
     let table = element("user-table");
-    let entries = fillTable();
+    let entries = user_entries;
     let str = `<tr>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Password</th>
-                    <th>DOB</th>
+                    <th>Dob</th>
                     <th>Accepted terms?</th>
                 </tr>`;
     for(let i=0;i<entries.length;i++){
@@ -126,4 +129,5 @@ form.addEventListener("submit", (e) => {
     }
     displayTable();
 });
+
 
