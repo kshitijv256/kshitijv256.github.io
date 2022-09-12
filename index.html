@@ -12,7 +12,7 @@
       <form id="form">
         <div id="username" class="inputs">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name.." />
+          <input type="text" id="name" name="name" placeholder="Your name.." required/>
         </div>
         <div id="emailid" class="inputs">
           <label for="email">Email</label>
@@ -20,15 +20,15 @@
         </div>
         <div id="passwd" class="inputs">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" placeholder="Enter Password" />
+          <input type="password" id="password" name="password" placeholder="Enter Password" required/>
         </div>
         <div id="cpasswd" class="inputs">
           <label for="cpassword">Confirm Password</label>
-          <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" />
+          <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" required/>
         </div>
         <div id="dob_id" class="inputs">
           <label for="dob">Date of Birth</label>
-          <input id="dob" name="dob" placeholder="Write something.." type="date" />
+          <input id="dob" name="dob" type="date" required/>
         </div>
         <div id="agree">
           <input id="tc" type="checkbox"> I agree to the terms and conditions</input>
@@ -42,8 +42,9 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Phone</th>
-            <th>Date of Birth</th>
+            <th>Password</th>
+            <th>DOB</th>
+            <th>Accepted terms?</th>
         </table>
       </div>
   </div>

@@ -64,13 +64,23 @@ dob.addEventListener("input", (e) => {
     e.preventDefault();
     verify(dob,message_dob,cond_dob);
 });
+tc.addEventListener("input", (e) => {
+    let cond_agree = !tc.checked;
+    e.preventDefault();
+    verify(tc,message_agree,cond_agree);
+});
 
 function makeObject(){
+    let check = 'No';
+    if(tc.checked){
+        check = 'Yes';
+    }
     let obj = {
         name: username.value,
         email: email.value,
         password: password.value,
-        dob: dob.value
+        dob: dob.value,
+        checked: check
     }
     return obj;
 }
@@ -87,14 +97,12 @@ function fillTable(){
 function displayTable(){
     let table = element("user-table");
     let entries = fillTable();
-    if (entries.length > 0) {
-        element("table-box").style.display = "flex";
-    }
     let str = `<tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Phone</th>
-                    <th>Date of Birth</th>
+                    <th>Password</th>
+                    <th>DOB</th>
+                    <th>Accepted terms?</th>
                 </tr>`;
     for(let i=0;i<entries.length;i++){
         str += `<tr>
@@ -102,17 +110,15 @@ function displayTable(){
                     <td>${entries[i].email}</td>
                     <td>${entries[i].password}</td>
                     <td>${entries[i].dob}</td>
+                    <td>${entries[i].checked}</td>
                 </tr>`;
     }
     table.innerHTML = str;
 }
 
 form.addEventListener("submit", (e) => {
-    let cond_agree = !tc.checked;
+    let cond_agree= !tc.checked;
     e.preventDefault();
-    let cond_dob = !checkDOB();
-    verify(dob,message_dob,cond_dob);
-    verify(tc,message_agree,cond_agree);
     if (!cond_agree) {
         let obj = makeObject();
         user_entries.push(obj);

@@ -17,7 +17,7 @@ body{
     flex-direction: row;
     justify-content: center;
     height: 500px;
-    width: auto;
+    width: 90%;
 }
 
 #main h1{
@@ -86,13 +86,13 @@ body{
 #table-box{
     margin : 0 20px;
     background-color: rgb(200, 255, 127);
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: left;
     border-radius:20px;
     height: 500px;
-    width: 600px;
+    width: 800px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
