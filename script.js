@@ -74,9 +74,9 @@ tc.addEventListener("input", (e) => {
 });
 
 function makeObject(){
-    let check = 'No';
+    let check = false;
     if(tc.checked){
-        check = 'Yes';
+        check = true;
     }
     let obj = {
         name: username.value,
